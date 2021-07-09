@@ -39,11 +39,12 @@ func FirstOrCreateExamResult(result ExamResult) (ExamResult, error) {
 	}
 
 	// refer: https://gorm.io/docs/advanced_query.html#FirstOrCreate
+	// Create struct with more attributes if record not found, those Attrs won’t be used to build SQL query
 	res := DB.Where(&ExamResult{ // 学生 ID + 考试名 唯一确定一个考试成绩
 		StudentID: result.Student.ID,
 		Exam:      result.Exam,
 		// Result:    result.Result,
-	}).Assign(result).Preload("Student").FirstOrCreate(&exam)
+	}).Attrs(result).Preload("Student").FirstOrCreate(&exam)
 
 	return exam, res.Error
 }
