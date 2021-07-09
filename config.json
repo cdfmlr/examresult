@@ -1,0 +1,22 @@
+{
+  "Database": {
+    "Username": "foobar",
+    "Password": "passw0rd",
+    "Protocol": "tcp",
+    "Address": "110.114.119.120:3306",
+    "DBName": "examresult"
+  },
+  "ExamResultQuery": {
+    "PeriodInMinutes": 120,
+    "MinSleepSeconds": 10
+  },
+  "HttpServer": {
+    "HttpAddress": ":8003"
+  },
+  "SMTP": {
+    "Host": "smtp.example.com",
+    "Port": 465,
+    "Username": "examresult@example.com",
+    "Password": "123456"
+  }
+}
